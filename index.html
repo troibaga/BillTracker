@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav class="sidebar">
+            <div class="name-container">
+                <h1>Bill Track</h1>
+                <hr> <!-- Add this line -->
+            </div>
+            <ul>
+                <li><a href="#" id="balance-tab">Balance Input</a></li>
+                <li><a href="#" id="billing-tab">Billing Details</a></li>
+                <li><a href="#" id="bills-tab">Bills</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div id="balance-section" class="section">
+                <h2>Balance Input</h2>
+                <form id="balance-form">
+                    <label for="salary">Salary Value (₱):</label>
+                    <input type="number" id="salary" name="salary" required>
+                    
+                    <label for="cutoff-date">Cutoff Date:</label>
+                    <input type="date" id="cutoff-date" name="cutoffDate" required>
+                    
+                    <label for="cutoff-no">Cutoff Number:</label>
+                    <select id="cutoff-no" name="cutoffNo" required>
+                        <option value="1">1 (15th)</option>
+                        <option value="2">2 (30th)</option>
+                    </select>
+                    
+                    <button type="submit">Submit Balance</button>
+                </form>
+            </div>
+
+            <div id="billing-section" class="section">
+                <h2>Billing Details</h2>
+                <form id="billing-form">
+                    <label for="bill-for">Bill For:</label>
+                    <input type="text" id="bill-for" name="billFor" required>
+
+                    <label for="bill-type">Bill Type:</label>
+                    <select id="bill-type" name="billType" required>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Necessities">Necessities</option>
+                        <option value="Loan">Loan</option>
+                    </select>
+
+                    <label for="billing-month">Billing Month:</label>
+                    <input type="month" id="billing-month" name="billingMonth" required>
+
+                    <label for="bill-date">Billing Date:</label>
+                    <input type="date" id="bill-date" name="billingDate" required>
+
+                    <label for="bill-due-date">Bill Due Date:</label>
+                    <input type="date" id="bill-due-date" name="billDueDate" required>
+
+                    <label for="total-amount">Total Amount (₱):</label>
+                    <input type="number" id="total-amount" name="totalAmount" required>
+
+                    <button type="submit">Add Bill</button>
+                </form>
+            </div>
+
+            <div id="bills-section" class="section">
+                <h2>Bills That Can Be Paid</h2>
+                <table id="bills-table">
+                    <thead>
+                        <tr>
+                            <th>Bill For</th>
+                            <th>Total Amount (₱)</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamically added rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
